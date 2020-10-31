@@ -93,6 +93,7 @@ def vector_to_mat(vector_pop_weights, mat_pop_weights):
 
 def predict_outputs(weights_mat, data_inputs, data_outputs, activation="relu"):
     predictions = numpy.zeros(shape=(data_inputs.shape[0]))
+    ans = []
     for sample_idx in range(data_inputs.shape[0]):
         r1 = data_inputs[sample_idx, :]
         for curr_weights in weights_mat:
@@ -104,9 +105,13 @@ def predict_outputs(weights_mat, data_inputs, data_outputs, activation="relu"):
         predicted_label = numpy.where(r1 == numpy.max(r1))[0][0]
         predictions[sample_idx] = predicted_label
     #add prob>0.5
+    if(prob > 0.5):
+        ans.append(1)
+    else :
+        ans.append(0)
     correct_predictions = numpy.where(predictions == data_outputs)[0].size
     accuracy = (correct_predictions/data_outputs.size)*100
-    return accuracy, predictions
+    return accuracy, predictions, ans
 
 """# Fitness Function"""
 
