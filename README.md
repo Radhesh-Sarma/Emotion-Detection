@@ -15,7 +15,17 @@ This is an Emotion Detection project, which classifies the emotion of a person i
 * Accuracy of the model = No. of correctly classified samples/ Total No. of Samples
 * The Genetic algorithm is implemeted with 3 different variations of Parent Selection, Crossover and Mutation.
 * Finally the best subset of features is obtained through the algorithm.
-* The Hyperparameters like the type of parent selection technique, crossover, mutation and classifier model are tuned through Grid Search.
+
+### Hyperparameters:
+ (Tuned through Grid Search)
+* The type of parent selection technique
+* The type of crossover technique
+* The type of mutation technique
+* The type of classifier model
+* The No of Generations
+* The Population Size
+* The No. of Parents involved in mating
+* The Mutation Rate
 
 ## Types of Parent Selection implemented
 * Rank Selection
